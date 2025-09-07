@@ -1,99 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Amal M K — Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-      color: #333;
-    }
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #ddd;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      margin: 10px 0;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #2c3e50;
-      color: #fff;
-      margin-top: 40px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amal M K — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
+  body { font-family:'Roboto', sans-serif; background:#f0f4f8; color:#333; }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg,#6a11cb,#2575fc);
+    text-align:center;
+    color:white;
+    padding:60px 20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  }
+  header img {
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:4px solid #fff;
+    margin-bottom:20px;
+    object-fit:cover;
+    transition: transform 0.3s;
+  }
+  header img:hover { transform: scale(1.05); }
+  header h1 { font-size:2.8rem; margin-bottom:10px; }
+  header p { font-size:1.2rem; opacity:0.85; }
+
+  /* Section styling */
+  section {
+    max-width:900px;
+    background:white;
+    margin:30px auto;
+    padding:30px 35px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  section:hover { transform: translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.1); }
+  section h2 {
+    color:#2575fc;
+    margin-bottom:20px;
+    border-bottom:2px solid #eee;
+    padding-bottom:5px;
+  }
+
+  /* Project & skills list */
+  ul { list-style:none; padding-left:0; }
+  ul li {
+    background:#f0f4f8;
+    margin:10px 0;
+    padding:12px 18px;
+    border-radius:10px;
+    transition:0.3s;
+  }
+  ul li:hover { background:#2575fc; color:white; cursor:pointer; }
+  a { color:#2575fc; text-decoration:none; transition:0.3s; }
+  a:hover { text-decoration:underline; }
+
+  /* Button style links */
+  .btn {
+    display:inline-block;
+    padding:10px 20px;
+    margin:5px 0;
+    border-radius:8px;
+    background: linear-gradient(90deg,#6a11cb,#2575fc);
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+  }
+  .btn:hover { transform: scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+
+  /* Footer */
+  footer {
+    text-align:center;
+    padding:20px;
+    background:#6a11cb;
+    color:white;
+    margin-top:30px;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+  }
+
+  /* Responsive */
+  @media(max-width:600px){
+    header h1 { font-size:2rem; }
+    header p { font-size:1rem; }
+    section { padding:20px; }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Hi, I’m Amal M K 👋</h1>
-    <p>B.Tech CSE (KTU 2024–28) • Learning Python, Java & C</p>
-  </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I’m a computer science student exploring programming and building small projects to improve my coding skills.</p>
-  </section>
+<header>
+  <img src="profile.jpg" alt="Amal M K">
+  <h1>Hi, I’m Amal M K 👋</h1>
+  <p>B.Tech CSE (KTU 2024–28) • Learning Python, Java & C</p>
+</header>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li><a href="https://github.com/amalmk-codes/HelloWorld">Hello World (Python)</a></li>
-      <li><a href="https://github.com/amalmk-codes/Number-Guessing-Game">Number Guessing Game</a></li>
-      <li><a href="https://github.com/amalmk-codes/Calculator">Simple Calculator</a></li>
-    </ul>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a computer science student exploring programming and building small projects to improve my coding skills. My goal is to become a proficient coder while learning Python, Java, and C.</p>
+</section>
 
-  <section>
-    <h2>Skills (Learning)</h2>
-    <ul>
-      <li>Python — basics, loops, functions</li>
-      <li>Java — basics, OOP</li>
-      <li>C Programming — basics</li>
-    </ul>
-  </section>
+<section id="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li><a class="btn" href="https://github.com/amalmk-codes/HelloWorld" target="_blank">Hello World (Python)</a></li>
+    <li><a class="btn" href="https://github.com/amalmk-codes/Number-Guessing-Game" target="_blank">Number Guessing Game</a></li>
+    <li><a class="btn" href="https://github.com/amalmk-codes/Calculator" target="_blank">Simple Calculator</a></li>
+  </ul>
+</section>
 
-  <footer>
-    <p>GitHub: <a href="https://github.com/amalmk-codes" style="color:#fff;">github.com/amalmk-codes</a></p>
-  </footer>
+<section id="skills">
+  <h2>Skills (Learning)</h2>
+  <ul>
+    <li>Python — basics, loops, functions</li>
+    <li>Java — basics, OOP</li>
+    <li>C Programming — basics</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>GitHub: <a class="btn" href="https://github.com/amalmk-codes" target="_blank">github.com/amalmk-codes</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Amal M K
+</footer>
+
 </body>
 </html>

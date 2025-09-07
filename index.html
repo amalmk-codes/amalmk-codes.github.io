@@ -9,7 +9,7 @@
   *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
   body{font-family:'Roboto',sans-serif;background:#f0f4f8;color:#333;}
 
-  /* Gradient animated header */
+  /* Header with animated gradient */
   header{
     background: linear-gradient(-45deg,#6a11cb,#2575fc,#6a11cb,#2575fc);
     background-size:400% 400%;
@@ -65,7 +65,6 @@
     background:#2575fc;color:white;transform:translateY(-8px) scale(1.02);box-shadow:0 12px 25px rgba(0,0,0,0.15);
   }
 
-  /* Project images */
   .project-img{
     width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:10px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -84,24 +83,18 @@
   .skill-bar{height:12px;width:100%;background:#ddd;border-radius:8px;overflow:hidden;}
   .skill-bar-fill{height:100%;width:0%;background:#2575fc;border-radius:8px;transition: width 2s;}
 
-  /* Coding laptop style */
+  /* Coding laptop style with online image */
   .code-laptop{
     background:#1e1e1e;color:#fff;padding:20px;border-radius:15px;font-family:'Courier New', monospace;
     box-shadow:0 8px 25px rgba(0,0,0,0.2);overflow:auto;
     position:relative;
   }
-  .code-laptop::before{
-    content:"";
-    position:absolute;top:10px;left:10px;width:12px;height:12px;background:#ff5f56;border-radius:50%;
+  .code-laptop img{
+    width:100%;border-radius:12px;margin-bottom:15px;
+    transition: transform 0.3s;
   }
-  .code-laptop::after{
-    content:"";
-    position:absolute;top:10px;left:30px;width:12px;height:12px;background:#ffbd2e;border-radius:50%;
-  }
-  .code-laptop .dot3{
-    position:absolute;top:10px;left:50px;width:12px;height:12px;background:#27c93f;border-radius:50%;
-  }
-  .code-laptop pre{margin:40px 0 0 0;white-space:pre-wrap;line-height:1.5;}
+  .code-laptop img:hover{transform:scale(1.05);}
+  .code-laptop pre{white-space:pre-wrap;line-height:1.5;}
 
   /* Footer */
   footer{text-align:center;padding:25px;background:#6a11cb;color:white;margin-top:40px;border-top-left-radius:15px;border-top-right-radius:15px;}
@@ -119,7 +112,7 @@
 <body>
 
 <header>
-  <img src="profile.jpg" alt="Amal M K">
+  <img src="Profile.jpg" alt="Amal M K">
   <h1>Hi, I’m Amal M K 👋</h1>
   <p>B.Tech CSE (KTU 2024–28) • Learning Python, Java & C</p>
 </header>
@@ -141,15 +134,15 @@
   <h2>Projects</h2>
   <ul>
     <li>
-      <img class="project-img" src="https://via.placeholder.com/300x140.png?text=Hello+World" alt="Hello World">
+      <img class="project-img" src="https://i.imgur.com/KGqXf5u.png" alt="Hello World">
       <a class="btn" href="https://github.com/amalmk-codes/HelloWorld" target="_blank">Hello World (Python)</a>
     </li>
     <li>
-      <img class="project-img" src="https://via.placeholder.com/300x140.png?text=Number+Game" alt="Number Guessing Game">
+      <img class="project-img" src="https://i.imgur.com/3Z6XZ5K.png" alt="Number Guessing Game">
       <a class="btn" href="https://github.com/amalmk-codes/Number-Guessing-Game" target="_blank">Number Guessing Game</a>
     </li>
     <li>
-      <img class="project-img" src="https://via.placeholder.com/300x140.png?text=Calculator" alt="Calculator">
+      <img class="project-img" src="https://i.imgur.com/UBHkX1t.png" alt="Calculator">
       <a class="btn" href="https://github.com/amalmk-codes/Calculator" target="_blank">Simple Calculator</a>
     </li>
   </ul>
@@ -163,11 +156,11 @@
 </section>
 
 <section id="code">
-  <h2>Coding Snippets</h2>
+  <h2>Coding Showcase</h2>
   <div class="code-laptop">
-    <div class="dot3"></div>
+    <img src="https://i.imgur.com/Q9qFt3m.png" alt="Laptop Coding Illustration">
     <pre>
-# Python: Hello World
+# Python Example
 print("Hello World")
 
 # Number Guessing Game
@@ -199,10 +192,9 @@ public class Hello {
 </footer>
 
 <script>
-  // Animate skill bars on scroll
   const skills = document.querySelectorAll('.skill-bar-fill');
   window.addEventListener('scroll',()=>{
-    const triggerBottom = window.innerHeight * 0.85;
+    const triggerBottom = window.innerHeight*0.85;
     skills.forEach(skill=>{
       const skillTop = skill.getBoundingClientRect().top;
       if(skillTop<triggerBottom){

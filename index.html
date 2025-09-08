@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amal M K — Portfolio</title>
+<title>Amal M K — Legendary Ultra-Pro Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* RESET */
@@ -93,7 +93,7 @@ footer{text-align:center;padding:25px;background:#0f0c29;color:white;margin-top:
 <header>
   <img src="Profile.jpg" alt="Amal M K">
   <h1>Hi, I’m Amal M K 👋</h1>
-  <p class="typing"></p>
+  <p class="typing" id="typed-text"></p>
 </header>
 
 <!-- NAVIGATION -->
@@ -108,7 +108,7 @@ footer{text-align:center;padding:25px;background:#0f0c29;color:white;margin-top:
 <!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
-  <p>I am <b>Amal M K</b>, a B.Tech CSE student (KTU 2024–28). I enjoy learning <b>Python, Java, and C</b> and building projects to improve my coding skills. I aspire to become a proficient programmer and contribute to open source. 🚀</p>
+  <p>I am <b>Amal M K</b>, a B.Tech CSE student (KTU 2024–28). I enjoy learning programming, building projects, and exploring new technologies. My goal is to become a skilled developer and contribute to open source. 🚀</p>
 </section>
 
 <!-- PROJECTS -->
@@ -180,4 +180,45 @@ public class Hello {
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
-  <p>GitHub: <a href="https://github.com/amalmk-codes" target="_blank">github.com/amalmk-codes</a></
+  <p>GitHub: <a href="https://github.com/amalmk-codes" target="_blank">github.com/amalmk-codes</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Amal M K
+</footer>
+
+<!-- TYPING SCRIPT -->
+<script>
+const texts = [
+  "Exploring Python Projects 🐍",
+  "Mastering Java Programming ☕",
+  "Practicing C Programming 🔧",
+  "Building Small Coding Projects 💻",
+  "Learning Algorithms & Data Structures 📊",
+  "Experimenting with Open Source 🌐"
+];
+let count = 0;
+let index = 0;
+let currentText = '';
+let letter = '';
+
+(function type(){
+    if(count === texts.length) count = 0;
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+    document.getElementById('typed-text').textContent = letter;
+
+    if(letter.length === currentText.length){
+        setTimeout(()=>{
+            index = 0;
+            count++;
+            type();
+        }, 1200);
+    } else {
+        setTimeout(type, 120);
+    }
+})();
+</script>
+
+</body>
+</html>

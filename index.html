@@ -4,53 +4,86 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amal M K — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-body{font-family:'Roboto Mono',monospace;background:#0d1117;color:#e6edf3;line-height:1.6;}
+body{font-family:'Roboto',sans-serif;background:#0d0d0d;color:#eee;overflow-x:hidden;}
 
 /* HEADER */
-header{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);}
-header img{width:150px;height:150px;border-radius:50%;border:4px solid #58a6ff;object-fit:cover;margin-bottom:20px;}
-header h1{font-size:2.5rem;margin-bottom:15px;}
-header p.typing{font-size:1.2rem;height:30px;color:#58a6ff;font-weight:bold;}
+header{
+  text-align:center;padding:80px 20px;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+}
+header img{
+  width:160px;height:160px;border-radius:50%;border:4px solid #fff;margin-bottom:20px;object-fit:cover;
+  transition:0.5s;box-shadow:0 0 20px #61dafb;
+}
+header img:hover{transform:scale(1.1) rotate(5deg);box-shadow:0 0 35px #ff6a00;}
+header h1{font-size:3rem;font-weight:700;margin-bottom:10px;}
+header p.typing{font-size:1.4rem;color:#61dafb;height:30px;font-weight:700;}
 
 /* NAVIGATION */
-nav{display:flex;justify-content:center;flex-wrap:wrap;background:#161b22;padding:15px 0;box-shadow:0 2px 10px rgba(0,0,0,0.5);}
-nav a{margin:0 20px;text-decoration:none;color:#e6edf3;font-weight:700;transition:0.3s;}
-nav a:hover{color:#58a6ff;}
+nav{display:flex;justify-content:center;flex-wrap:wrap;background:#1a1a1a;padding:12px 0;box-shadow:0 2px 15px rgba(0,0,0,0.5);}
+nav a{margin:0 20px;text-decoration:none;color:#61dafb;font-weight:700;transition:0.3s;font-size:1rem;}
+nav a:hover{color:#ff6a00;}
 
 /* SECTIONS */
-section{max-width:1000px;margin:40px auto;padding:35px;background:#161b22;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.3);animation:fadeInUp 1s ease both;}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-section h2{color:#58a6ff;margin-bottom:20px;border-bottom:2px solid #30363d;padding-bottom:5px;}
+section{
+  max-width:1000px;margin:40px auto;padding:35px;background:#1a1a1a;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.5);
+  animation:fadeInUp 1s forwards;opacity:0;transform:translateY(30px);
+}
+section h2{color:#61dafb;margin-bottom:20px;border-bottom:2px solid #333;padding-bottom:5px;font-size:1.8rem;}
 
 /* PROJECTS */
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.project-card{background:#0d1117;padding:20px;border-radius:12px;text-align:center;transition:0.4s;cursor:pointer;border:1px solid #30363d;}
-.project-card:hover{transform:translateY(-8px) scale(1.02);border-color:#58a6ff;box-shadow:0 0 20px #58a6ff55;}
-.project-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:12px;}
-.project-card a{display:inline-block;margin-top:10px;padding:10px 20px;border-radius:8px;text-decoration:none;background:#238636;color:white;font-weight:700;transition:0.3s;}
-.project-card a:hover{background:#2ea043;}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
+.project-card{
+  background:#242424;padding:20px;border-radius:12px;text-align:center;transition:0.4s;position:relative;overflow:hidden;
+}
+.project-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 12px 25px rgba(0,0,0,0.5);}
+.project-card img{width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px;transition: transform 0.3s;}
+.project-card img:hover{transform:scale(1.05);}
+.project-card::before{
+  content:"💻";
+  position:absolute;top:10px;right:10px;font-size:2rem;opacity:0.15;animation:spin 6s linear infinite;
+}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+.project-card h3{font-size:1.2rem;margin-bottom:5px;color:#61dafb;}
+.project-card p{font-size:0.9rem;color:#ccc;margin-bottom:10px;}
+.project-card a{
+  display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;background:linear-gradient(90deg,#0f0c29,#302b63,#ff6a00);color:white;font-weight:700;transition:0.3s;
+}
+.project-card a:hover{transform:scale(1.08);box-shadow:0 6px 18px rgba(0,0,0,0.5);}
 
 /* SKILLS */
-.skill{margin-bottom:15px;}
-.skill-name{font-weight:700;margin-bottom:5px;}
-.skill-bar{height:12px;width:100%;background:#30363d;border-radius:8px;overflow:hidden;}
-.skill-bar-fill{height:100%;width:0;background:#58a6ff;border-radius:8px;transition:width 2s;}
+.skill{margin-bottom:18px;}
+.skill-name{font-weight:700;margin-bottom:6px;font-size:1rem;}
+.skill-bar{height:14px;width:100%;background:#333;border-radius:10px;overflow:hidden;}
+.skill-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#61dafb,#ff6a00);border-radius:10px;transition: width 2s;}
 
 /* CODE SHOWCASE */
-.code-box{background:#0d1117;border:2px solid #30363d;border-radius:15px;padding:20px;color:#e6edf3;font-family:'Courier New',monospace;overflow:auto;max-height:400px;box-shadow:0 0 15px rgba(88,166,255,0.2);}
-.code-box pre{white-space:pre-wrap;}
+.code-box{
+  background:#000;color:#61dafb;padding:20px;border-radius:15px;font-family:'Courier New',monospace;
+  box-shadow:0 8px 25px rgba(0,0,0,0.5);overflow:auto;max-height:400px;margin-top:20px;
+}
+
+/* CONTACT */
+section#contact p a{color:#61dafb;text-decoration:none;font-weight:700;}
+section#contact p a:hover{text-decoration:underline;}
 
 /* FOOTER */
-footer{text-align:center;padding:20px;background:#161b22;color:#8b949e;margin-top:40px;}
+footer{text-align:center;padding:25px;background:#0f0c29;color:white;margin-top:40px;border-top-left-radius:15px;border-top-right-radius:15px;font-size:0.95rem;}
 
-/* RESPONSIVE */
-@media(max-width:650px){
+/* TYPING ANIMATION CURSOR */
+.typing::after{content:'|';display:inline-block;animation:blink 0.7s infinite;}
+@keyframes blink{0%,50%,100%{opacity:1;}25%,75%{opacity:0;}}
+
+/* ANIMATION */
+@keyframes fadeInUp{to{opacity:1;transform:translateY(0);}}
+@media(max-width:700px){
   header h1{font-size:2rem;}
   header p.typing{font-size:1rem;}
-  nav a{margin:10px;}
+  nav a{margin:8px;}
+  .projects{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -58,8 +91,8 @@ footer{text-align:center;padding:20px;background:#161b22;color:#8b949e;margin-to
 
 <!-- HEADER -->
 <header>
-  <img src="Profile.jpg" alt="Amal M K" onerror="this.style.display='none';document.getElementById('nameFallback').style.display='block';">
-  <h1 id="nameFallback" style="display:none;">Amal M K</h1>
+  <img src="Profile.jpg" alt="Amal M K">
+  <h1>Hi, I’m Amal M K 👋</h1>
   <p class="typing"></p>
 </header>
 
@@ -75,23 +108,46 @@ footer{text-align:center;padding:20px;background:#161b22;color:#8b949e;margin-to
 <!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
-  <p>I am <b>Amal M K</b>, a Computer Science student (KTU 2024–28).  
-  Exploring <b>Python, Java, and C</b> while building projects on GitHub.  
-  My goal is to grow into a skilled developer and contribute to open source 🚀.</p>
+  <p>I am <b>Amal M K</b>, a B.Tech CSE student (KTU 2024–28). I enjoy learning <b>Python, Java, and C</b> and building projects to improve my coding skills. I aspire to become a proficient programmer and contribute to open source. 🚀</p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
-  <div id="projects-container" class="projects"></div>
+  <div class="projects">
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="HelloWorld">
+      <h3>HelloWorld (Python)</h3>
+      <p>My first Python project to learn syntax and print statements.</p>
+      <a href="https://github.com/amalmk-codes/HelloWorld" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg" alt="Number Guessing Game">
+      <h3>Number Guessing Game</h3>
+      <p>Simple number guessing game built using Python and random module.</p>
+      <a href="https://github.com/amalmk-codes/Number-Guessing-Game" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg" alt="Python Calculator">
+      <h3>Python Calculator</h3>
+      <p>Basic calculator project to perform arithmetic operations.</p>
+      <a href="https://github.com/amalmk-codes/Python-Calculator" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg" alt="My First Project">
+      <h3>My First Java Project</h3>
+      <p>My first GitHub Java project, learning classes and main method.</p>
+      <a href="https://github.com/amalmk-codes/my-first-project" target="_blank">View on GitHub</a>
+    </div>
+  </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
   <h2>Skills</h2>
-  <div class="skill"><div class="skill-name">Python</div><div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div></div>
-  <div class="skill"><div class="skill-name">Java</div><div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div></div>
-  <div class="skill"><div class="skill-name">C Programming</div><div class="skill-bar"><div class="skill-bar-fill" style="width:40%"></div></div></div>
+  <div class="skill"><div class="skill-name">Python</div><div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+  <div class="skill"><div class="skill-name">Java</div><div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div></div>
+  <div class="skill"><div class="skill-name">C Programming</div><div class="skill-bar"><div class="skill-bar-fill" style="width:55%"></div></div></div>
 </section>
 
 <!-- CODE SHOWCASE -->
@@ -99,21 +155,21 @@ footer{text-align:center;padding:20px;background:#161b22;color:#8b949e;margin-to
   <h2>Coding Showcase</h2>
   <div class="code-box">
 <pre>
-# Python Example
+# Python Hello World
 print("Hello World")
 
 # Number Guessing Game
 import random
 number = random.randint(1,10)
-guess = int(input("Guess: "))
-if guess==number:
+guess = int(input("Guess a number: "))
+if guess == number:
     print("Correct!")
 else:
-    print("Try again")
+    print("Try again!")
 
-// Java Example
+// Java Hello World
 public class Hello {
-  public static void main(String[] args) {
+  public static void main(String[] args){
     System.out.println("Hello World");
   }
 }
@@ -124,79 +180,4 @@ public class Hello {
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
-  <p>GitHub: <a href="https://github.com/amalmk-codes" target="_blank">github.com/amalmk-codes</a></p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  &copy; 2025 Amal M K | Built with 💻 + ☕
-</footer>
-
-<!-- SCRIPT -->
-<script>
-// Typing animation
-const texts = ["Python Learner", "Java Developer", "Future Coder 🚀"];
-let count=0, index=0, currentText="", letter="";
-(function type(){
-  if(count===texts.length){count=0;}
-  currentText=texts[count];
-  letter=currentText.slice(0,++index);
-  document.querySelector(".typing").textContent=letter;
-  if(letter.length===currentText.length){count++;index=0;setTimeout(type,1200);}
-  else{setTimeout(type,120);}
-})();
-
-// Animate skills
-window.addEventListener("scroll",()=>{
-  document.querySelectorAll(".skill-bar-fill").forEach(bar=>{
-    const rect=bar.getBoundingClientRect();
-    if(rect.top<window.innerHeight){bar.style.width=bar.getAttribute("style").match(/width:\s*(\d+%)/)[1];}
-  });
-});
-
-// Auto-load GitHub projects with coding/laptop images
-const projectImages = [
-  "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg", // HelloWorld
-  "https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg", // Number Guessing Game
-  "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg", // Python Calculator
-  "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg", // My First Java Project
-];
-
-const container = document.getElementById("projects-container");
-fetch(`https://api.github.com/users/${username}/repos?sort=created`)
-  .then(res => res.json())
-  .then(repos => {
-    let imgIndex=0;
-    repos.forEach(repo => {
-      if(repo.name === "amalmk-codes.github.io") return;
-      const card = document.createElement("div");
-      card.className="project-card";
-
-      const img=document.createElement("img");
-      img.src=projectImages[imgIndex % projectImages.length];
-      img.alt=repo.name;
-      card.appendChild(img);
-      imgIndex++;
-
-      const title=document.createElement("h3");
-      title.textContent=repo.name;
-      card.appendChild(title);
-
-      const desc=document.createElement("p");
-      desc.textContent=repo.description || "Coding project";
-      card.appendChild(desc);
-
-      const link=document.createElement("a");
-      link.href=repo.html_url;
-      link.target="_blank";
-      link.textContent="View on GitHub";
-      card.appendChild(link);
-
-      container.appendChild(card);
-    });
-  })
-  .catch(err=>console.error("GitHub API error:", err));
-</script>
-
-</body>
-</html>
+  <p>GitHub: <a href="https://github.com/amalmk-codes" target="_blank">github.com/amalmk-codes</a></

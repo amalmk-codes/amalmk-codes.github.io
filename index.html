@@ -4,119 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amal M K — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-  body{font-family:'Roboto',sans-serif;background:#f0f4f8;color:#333;}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Roboto Mono',monospace;background:#0d1117;color:#e6edf3;line-height:1.6;}
 
-  /* Header with animated gradient */
-  header{
-    background: linear-gradient(-45deg,#6a11cb,#2575fc,#6a11cb,#2575fc);
-    background-size:400% 400%;
-    animation:gradientBG 15s ease infinite;
-    text-align:center;color:white;padding:80px 20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-  }
-  @keyframes gradientBG{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-  }
-  header img{
-    width:160px;height:160px;border-radius:50%;border:4px solid #fff;margin-bottom:20px;object-fit:cover;
-    transition: transform 0.3s;
-  }
-  header img:hover{transform:scale(1.1);}
-  header h1{font-size:3rem;margin-bottom:10px;}
-  header p{font-size:1.3rem;opacity:0.9;}
+/* HEADER */
+header{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);}
+header img{width:150px;height:150px;border-radius:50%;border:4px solid #58a6ff;object-fit:cover;margin-bottom:20px;}
+header h1{font-size:2.5rem;margin-bottom:15px;}
+header p.typing{font-size:1.2rem;height:30px;color:#58a6ff;font-weight:bold;}
 
-  /* Navigation bar */
-  nav{
-    position:sticky;top:0;background:white;display:flex;justify-content:center;padding:12px 0;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:100;
-  }
-  nav a{
-    margin:0 20px;text-decoration:none;color:#2575fc;font-weight:700;transition:0.3s;
-  }
-  nav a:hover{color:#6a11cb;}
+/* NAVIGATION */
+nav{display:flex;justify-content:center;flex-wrap:wrap;background:#161b22;padding:15px 0;box-shadow:0 2px 10px rgba(0,0,0,0.5);}
+nav a{margin:0 20px;text-decoration:none;color:#e6edf3;font-weight:700;transition:0.3s;}
+nav a:hover{color:#58a6ff;}
 
-  /* Sections */
-  section{
-    max-width:950px;background:white;margin:30px auto;padding:35px 40px;border-radius:15px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.05);transition: transform 0.5s, box-shadow 0.5s, opacity 1s;
-    opacity:0;transform: translateY(30px);animation:fadeInUp 1s forwards;
-  }
-  section:nth-of-type(1){animation-delay:0.2s;}
-  section:nth-of-type(2){animation-delay:0.4s;}
-  section:nth-of-type(3){animation-delay:0.6s;}
-  section:nth-of-type(4){animation-delay:0.8s;}
-  section:nth-of-type(5){animation-delay:1s;}
-  @keyframes fadeInUp{to{opacity:1;transform:translateY(0);}}
-  section:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(0,0,0,0.1);}
-  section h2{color:#2575fc;margin-bottom:20px;border-bottom:2px solid #eee;padding-bottom:5px;}
+/* SECTIONS */
+section{max-width:1000px;margin:40px auto;padding:35px;background:#161b22;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.3);animation:fadeInUp 1s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+section h2{color:#58a6ff;margin-bottom:20px;border-bottom:2px solid #30363d;padding-bottom:5px;}
 
-  /* Projects grid */
-  ul{list-style:none;padding-left:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-  ul li{
-    background:#f0f4f8;padding:18px 20px;border-radius:12px;text-align:center;
-    transition:0.4s;box-shadow:0 4px 15px rgba(0,0,0,0.05);position:relative;
-  }
-  ul li:hover{
-    background:#2575fc;color:white;transform:translateY(-8px) scale(1.02);box-shadow:0 12px 25px rgba(0,0,0,0.15);
-  }
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.project-card{background:#0d1117;padding:20px;border-radius:12px;text-align:center;transition:0.4s;cursor:pointer;border:1px solid #30363d;}
+.project-card:hover{transform:translateY(-8px) scale(1.02);border-color:#58a6ff;box-shadow:0 0 20px #58a6ff55;}
+.project-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:12px;}
+.project-card a{display:inline-block;margin-top:10px;padding:10px 20px;border-radius:8px;text-decoration:none;background:#238636;color:white;font-weight:700;transition:0.3s;}
+.project-card a:hover{background:#2ea043;}
 
-  .project-img{
-    width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .project-img:hover{transform:scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+/* SKILLS */
+.skill{margin-bottom:15px;}
+.skill-name{font-weight:700;margin-bottom:5px;}
+.skill-bar{height:12px;width:100%;background:#30363d;border-radius:8px;overflow:hidden;}
+.skill-bar-fill{height:100%;width:0;background:#58a6ff;border-radius:8px;transition:width 2s;}
 
-  a{color:#2575fc;text-decoration:none;transition:0.3s;}
-  a:hover{text-decoration:underline;}
-  .btn{display:inline-block;padding:12px 25px;margin:5px 0;border-radius:10px;
-       background:linear-gradient(90deg,#6a11cb,#2575fc);color:white;text-decoration:none;font-weight:700;transition:0.3s;}
-  .btn:hover{transform:scale(1.08);box-shadow:0 6px 18px rgba(0,0,0,0.3);}
+/* CODE SHOWCASE */
+.code-box{background:#0d1117;border:2px solid #30363d;border-radius:15px;padding:20px;color:#e6edf3;font-family:'Courier New',monospace;overflow:auto;max-height:400px;box-shadow:0 0 15px rgba(88,166,255,0.2);}
+.code-box pre{white-space:pre-wrap;}
 
-  /* Skills bars */
-  .skill{margin-bottom:15px;}
-  .skill-name{font-weight:700;margin-bottom:5px;}
-  .skill-bar{height:12px;width:100%;background:#ddd;border-radius:8px;overflow:hidden;}
-  .skill-bar-fill{height:100%;width:0%;background:#2575fc;border-radius:8px;transition: width 2s;}
+/* FOOTER */
+footer{text-align:center;padding:20px;background:#161b22;color:#8b949e;margin-top:40px;}
 
-  /* Coding laptop style with online image */
-  .code-laptop{
-    background:#1e1e1e;color:#fff;padding:20px;border-radius:15px;font-family:'Courier New', monospace;
-    box-shadow:0 8px 25px rgba(0,0,0,0.2);overflow:auto;
-    position:relative;
-  }
-  .code-laptop img{
-    width:100%;border-radius:12px;margin-bottom:15px;
-    transition: transform 0.3s;
-  }
-  .code-laptop img:hover{transform:scale(1.05);}
-  .code-laptop pre{white-space:pre-wrap;line-height:1.5;}
-
-  /* Footer */
-  footer{text-align:center;padding:25px;background:#6a11cb;color:white;margin-top:40px;border-top-left-radius:15px;border-top-right-radius:15px;}
-
-  /* Responsive */
-  @media(max-width:650px){
-    header h1{font-size:2rem;}
-    header p{font-size:1rem;}
-    section{padding:25px;}
-    nav a{margin:0 12px;}
-    ul{grid-template-columns:1fr;}
-  }
+/* RESPONSIVE */
+@media(max-width:650px){
+  header h1{font-size:2rem;}
+  header p.typing{font-size:1rem;}
+  nav a{margin:10px;}
+}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-  <img src="Profile.jpg" alt="Amal M K">
-  <h1>Hi, I’m Amal M K 👋</h1>
-  <p>B.Tech CSE (KTU 2024–28) • Learning Python, Java & C</p>
+  <img src="Profile.jpg" alt="Amal M K" onerror="this.style.display='none';document.getElementById('nameFallback').style.display='block';">
+  <h1 id="nameFallback" style="display:none;">Amal M K</h1>
+  <p class="typing"></p>
 </header>
 
+<!-- NAVIGATION -->
 <nav>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
@@ -125,41 +72,33 @@
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
-  <p>I am a computer science student exploring programming and building small projects to improve my coding skills. My goal is to become a proficient coder while learning Python, Java, and C.</p>
+  <p>I am <b>Amal M K</b>, a Computer Science student (KTU 2024–28).  
+  Exploring <b>Python, Java, and C</b> while building projects on GitHub.  
+  My goal is to grow into a skilled developer and contribute to open source 🚀.</p>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
-  <ul>
-    <li>
-      <img class="project-img" src="https://i.imgur.com/KGqXf5u.png" alt="Hello World">
-      <a class="btn" href="https://github.com/amalmk-codes/HelloWorld" target="_blank">Hello World (Python)</a>
-    </li>
-    <li>
-      <img class="project-img" src="https://i.imgur.com/3Z6XZ5K.png" alt="Number Guessing Game">
-      <a class="btn" href="https://github.com/amalmk-codes/Number-Guessing-Game" target="_blank">Number Guessing Game</a>
-    </li>
-    <li>
-      <img class="project-img" src="https://i.imgur.com/UBHkX1t.png" alt="Calculator">
-      <a class="btn" href="https://github.com/amalmk-codes/Calculator" target="_blank">Simple Calculator</a>
-    </li>
-  </ul>
+  <div id="projects-container" class="projects"></div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
   <h2>Skills</h2>
-  <div class="skill"><div class="skill-name">Python</div><div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div></div>
-  <div class="skill"><div class="skill-name">Java</div><div class="skill-bar"><div class="skill-bar-fill" style="width:40%"></div></div></div>
-  <div class="skill"><div class="skill-name">C Programming</div><div class="skill-bar"><div class="skill-bar-fill" style="width:30%"></div></div></div>
+  <div class="skill"><div class="skill-name">Python</div><div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div></div>
+  <div class="skill"><div class="skill-name">Java</div><div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div></div>
+  <div class="skill"><div class="skill-name">C Programming</div><div class="skill-bar"><div class="skill-bar-fill" style="width:40%"></div></div></div>
 </section>
 
+<!-- CODE SHOWCASE -->
 <section id="code">
   <h2>Coding Showcase</h2>
-  <div class="code-laptop">
-    <img src="https://i.imgur.com/Q9qFt3m.png" alt="Laptop Coding Illustration">
-    <pre>
+  <div class="code-box">
+<pre>
 # Python Example
 print("Hello World")
 
@@ -172,36 +111,91 @@ if guess==number:
 else:
     print("Try again")
 
-# Java Example
+// Java Example
 public class Hello {
   public static void main(String[] args) {
     System.out.println("Hello World");
   }
 }
-    </pre>
+</pre>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
-  <p>GitHub: <a class="btn" href="https://github.com/amalmk-codes" target="_blank">github.com/amalmk-codes</a></p>
+  <p>GitHub: <a href="https://github.com/amalmk-codes" target="_blank">github.com/amalmk-codes</a></p>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  &copy; 2025 Amal M K
+  &copy; 2025 Amal M K | Built with 💻 + ☕
 </footer>
 
+<!-- SCRIPT -->
 <script>
-  const skills = document.querySelectorAll('.skill-bar-fill');
-  window.addEventListener('scroll',()=>{
-    const triggerBottom = window.innerHeight*0.85;
-    skills.forEach(skill=>{
-      const skillTop = skill.getBoundingClientRect().top;
-      if(skillTop<triggerBottom){
-        skill.style.width = skill.getAttribute('style').replace('width:','');
-      }
-    });
+// Typing animation
+const texts = ["Python Learner", "Java Developer", "Future Coder 🚀"];
+let count=0, index=0, currentText="", letter="";
+(function type(){
+  if(count===texts.length){count=0;}
+  currentText=texts[count];
+  letter=currentText.slice(0,++index);
+  document.querySelector(".typing").textContent=letter;
+  if(letter.length===currentText.length){count++;index=0;setTimeout(type,1200);}
+  else{setTimeout(type,120);}
+})();
+
+// Animate skills
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".skill-bar-fill").forEach(bar=>{
+    const rect=bar.getBoundingClientRect();
+    if(rect.top<window.innerHeight){bar.style.width=bar.getAttribute("style").match(/width:\s*(\d+%)/)[1];}
   });
+});
+
+// Auto-load GitHub projects with coding/laptop images
+const projectImages = [
+  "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg", // HelloWorld
+  "https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg", // Number Guessing Game
+  "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg", // Python Calculator
+  "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg", // My First Java Project
+];
+
+const container = document.getElementById("projects-container");
+fetch(`https://api.github.com/users/${username}/repos?sort=created`)
+  .then(res => res.json())
+  .then(repos => {
+    let imgIndex=0;
+    repos.forEach(repo => {
+      if(repo.name === "amalmk-codes.github.io") return;
+      const card = document.createElement("div");
+      card.className="project-card";
+
+      const img=document.createElement("img");
+      img.src=projectImages[imgIndex % projectImages.length];
+      img.alt=repo.name;
+      card.appendChild(img);
+      imgIndex++;
+
+      const title=document.createElement("h3");
+      title.textContent=repo.name;
+      card.appendChild(title);
+
+      const desc=document.createElement("p");
+      desc.textContent=repo.description || "Coding project";
+      card.appendChild(desc);
+
+      const link=document.createElement("a");
+      link.href=repo.html_url;
+      link.target="_blank";
+      link.textContent="View on GitHub";
+      card.appendChild(link);
+
+      container.appendChild(card);
+    });
+  })
+  .catch(err=>console.error("GitHub API error:", err));
 </script>
 
 </body>
